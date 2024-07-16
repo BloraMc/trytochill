@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TryToChill Network</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Bienvenue sur TryToChill Network</h1>
+    <nav>
+      <ul>
+        <li><button onclick="window.location.href='#gamemodes'">Modes de jeu</button></li>
+        <li><button onclick="window.open('https://discord.gg/KTuvTYYuTt', '_blank')">Discord</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="join-now">
+    <h2>Rejoignez-nous maintenant !</h2>
+    <button id="copy-ip">Copier l'IP</button>
+    <p id="copy-message"></p>
+  </section>
+
+  <script>
+    const copyButton = document.getElementById('copy-ip');
+    const copyMessage = document.getElementById('copy-message');
+    const ipAddress = 'trytochill.s.recloud.fr';
+
+    copyButton.addEventListener('click', () => {
+      navigator.clipboard.writeText(ipAddress)
+        .then(() => {
+          copyMessage.textContent = 'IP copiée !';
+        })
+        .catch(err => {
+          console.error('Échec de la copie : ', err);
+          copyMessage.textContent = 'Échec de la copie';
+        });
+    });
+  </script>
+
+  <section id="gamemodes">
+    <h2>Nos modes de jeu</h2>
+    <div class="gamemode-container">
+      <div class="gamemode">
+        <h3>Bedwars</h3>
+        <p>Dans Bed Wars, un mode de jeu stratégique de Minecraft, vous protégez votre lit tout en éliminant les
+          adversaires sur des îles célestes. Si votre lit est détruit, il ne vous reste qu'une seule vie. Utilisez la
+          boutique de votre île pour obtenir de meilleurs objets et assurer la victoire !</p>
+      </div>
+      <div class="gamemode">
+        <h3>Faction+</h3>
+        <p>Dans Faction+, un mode de jeu multijoueur de Minecraft, les joueurs forment des factions, se battent pour le
+          contrôle du territoire et accumulent des richesses. Sur le réseau TryToChill, ils ont ajouté des éléments
+          comme le mana, les compétences et les niveaux pour améliorer l'expérience. Le mana peut être utilisé pour des
+          capacités spéciales, les compétences améliorent les performances et les niveaux reflètent la progression.
+          C'est un mélange passionnant de stratégie, de combat et de survie !</p>
+      </div>
+      <div class="gamemode">
+        <h3>KitPVP</h3>
+        <p>KitPvP est un mode de jeu Minecraft rapide où les joueurs se battent les uns contre les autres en utilisant
+          des kits préfabriqués. Le but est de vaincre les adversaires et de gagner des points, de l'xp et des
+          niveaux...</p>
+      </div>
+      <div class="gamemode">
+        <h3>Autres modes de jeu</h3>
+        <p>Il y a tellement de modes de jeu que vous pouvez jouer sur TryToChill, trouvez-les en rejoignant TryToChill
+          Network!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="discord">
+    <h2>Rejoignez notre Discord</h2>
+    <iframe src="https://discord.com/widget?id=1178261539850039386&theme=dark" width="350" height="500"
+      allowtransparency="true" frameborder="0"
+      sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    <button onclick="window.open('https://discord.gg/KTuvTYYuTt', '_blank')">Rejoindre le Discord</button>
+  </section>
+
+  <footer>
+    <p>© 2024 TryToChill Network</p>
+  </footer>
+</body>
+
+</html>
